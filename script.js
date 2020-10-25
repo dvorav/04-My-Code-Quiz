@@ -75,8 +75,9 @@ const question = [
   },
 ];
 
-const questionNames = question.map((el) => el.answers);
-console.log(question.answers);
+let questionNames = question.map((el) => el.answers);
+let b = questionNames[1]
+
 
 //Quiz questions are linked to
 const questionElement = document.getElementById("questions");
@@ -133,7 +134,7 @@ function showQuestions(question) {
     //
     if (answer.correct) {
       button.dataset.correct = answer.correct;
-      console.log("hello");
+     
     }
     // button.addEventListener("click", selectAnswer); removable
     $(button).on("click", selectAnswer);
@@ -169,11 +170,11 @@ function selectAnswer(e) {
 function setStatusClass(element, correct) {
   clearStatusClass(element);
   if (correct) {
-    element.classList.add("correct")
-   
+    // element.classList.add("correct");
+    console.log("correct")
   } else {
     element.classList.add("wrong");
-    
+    console.log("wrong")
   }
 }
 function clearStatusClass(element) {
@@ -206,3 +207,4 @@ Stop timer once submit is clicked
 Answer is right, timer stays the same
 Answer is wrong, deduct 15 seconds from timer
 */
+
